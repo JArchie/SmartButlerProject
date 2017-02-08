@@ -47,7 +47,7 @@ public class AboutSoftActivity extends BaseActivity{
         //添加数据
         mList.add("应用名称:"+getString(R.string.app_name));
         mList.add("版本号:"+ UtilTools.getVersion(this));
-        mList.add("官网:http://blog.csdn.net/jarchie520");
+        mList.add("官网:https://github.com/JArchie");
         mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mList);
         mListView.setAdapter(mAdapter);
     }
