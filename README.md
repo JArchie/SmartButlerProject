@@ -1,0 +1,2 @@
+# SmartButlerProject
+这是一个综合案例，里面集成了一些常用第三方库的简单使用！用到了TabLayout、腾讯Bugly、Google的Gson和ZXing、Square的Picasso框架、PhotoView、科大讯飞的在线语音合成服务、CircleImageview、RxVolley的请求及下载模块、NumberProgressBar、百度地图的sdk以及Bmob后端云服务！其中用到了聚合和代码家的接口，非常感谢！
