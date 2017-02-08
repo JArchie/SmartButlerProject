@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        applicationId "com.jarchie.smartbutler"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    //过滤
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//添加本地仓库
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //v7包
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    //TabLayout
+    compile 'com.android.support:design:25.1.0'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    //Gson
+    compile files('libs/gson-2.3.1.jar')
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //PhotoView
+    compile 'com.github.chrisbanes:PhotoView:1.3.1'
+    //科大讯飞在线语音合成服务
+    compile files('libs/Msc.jar')
+    compile files('libs/Sunflower.jar')
+    //CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //RxVolley
+    compile 'com.kymjs.rxvolley:rxvolley:1.1.4'
+    //RxVolley下载模块
+    compile 'com.kymjs.rxvolley:okhttp:1.1.4'
+    //Bmob后端云服务
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+    //NumberProgressBar
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    //zxing
+    compile project(path: ':libzxing')
+    //百度地图
+    compile files('libs/BaiduLBS_Android.jar')
+}
