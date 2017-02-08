@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.jarchie.smartbutler.MainActivity;
+
 import com.jarchie.smartbutler.R;
 import com.jarchie.smartbutler.adapter.GuideAdapter;
 import com.jarchie.smartbutler.utils.UtilTools;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,7 +127,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         switch (view.getId()){
             case R.id.btn_start:
             case R.id.tv_back:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 finish();
                 break;
         }
