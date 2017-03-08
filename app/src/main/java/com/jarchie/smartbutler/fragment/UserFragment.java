@@ -162,7 +162,9 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                     break;
                 //相册数据
                 case ALBUM_REQUEST_CODE:
-                    startPhotoZoom(data.getData());
+                    if (data != null){
+                        startPhotoZoom(data.getData());
+                    }
                     break;
                 case RESULT_REQUEST_CODE:
                     //有可能点击舍弃

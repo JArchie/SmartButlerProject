@@ -24,6 +24,10 @@ android {
         exclude 'META-INF/rxjava.properties'
     }
 
+    dexOptions{
+        preDexLibraries = false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
