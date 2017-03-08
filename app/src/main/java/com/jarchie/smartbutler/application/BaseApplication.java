@@ -1,11 +1,14 @@
 package com.jarchie.smartbutler.application;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
+
 import com.baidu.mapapi.SDKInitializer;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 import com.jarchie.smartbutler.utils.StaticClass;
 import com.tencent.bugly.crashreport.CrashReport;
+
 import cn.bmob.v3.Bmob;
 
 /**
@@ -22,6 +25,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         //初始化Bugly
         CrashReport.initCrashReport(getApplicationContext(),
                 StaticClass.BUGLY_APP_ID, true);

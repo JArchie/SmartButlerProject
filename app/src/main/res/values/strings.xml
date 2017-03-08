@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartButler</string>
+    <string name="app_name">智能管家</string>
     <string name="text_setting">设置</string>
     <string name="tab_first">服务管家</string>
     <string name="tab_second">微信精选</string>
